@@ -12,11 +12,12 @@
 
 <body>
 
-    <h1 class="display-1 text-center">Položeni ispiti</h1>
+    <h1 class="text-center mt-5 mb-5">Položeni ispiti</h1>
     <img data-bs-toggle="modal" data-bs-target="#modal-dodaj-ispit" id="add-sign" src="https://t4.ftcdn.net/jpg/01/14/04/65/360_F_114046562_CoMtlfJGu0WhnDHLMz8qOHtHblQBH9QK.jpg">
 
     <?php
     require 'add-modal.php';
+    require 'tabelaIspiti.php';
     ?>
 
 

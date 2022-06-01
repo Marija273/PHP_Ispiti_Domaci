@@ -4,8 +4,13 @@
 
 
 #add-sign {
-    width: 300px;
-    height: 250px;
-    margin-left: 815px;
+    width: 250px;
+    height: 200px;
+    margin-left: 840px;
     margin-top: -20px;
+}
+
+#tabela-ispiti{
+    width: 50%;
+    margin-left: 28%;
 }

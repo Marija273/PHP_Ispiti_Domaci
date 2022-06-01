@@ -3,6 +3,7 @@ $(function () {
     get();
     update();
     obrisi();
+    sortiranje();
 });
 
 
@@ -106,5 +107,53 @@ function obrisi() {
                 alert('Ispit uspešno obrisan iz baze podataka!')
             }
         })
+    });
+}
+
+
+
+function sortiranje() {
+
+    $(document).on('keydown', function (e) {
+
+        if (e.keyCode === 40) {
+
+            let poredak = 'opadajuce';
+
+            $.ajax(
+                {
+                    url: 'sort.php',
+                    method: 'post',
+                    data: { Poredak: poredak },
+
+                    success: function (redovi) {
+                        {
+                            $('tbody').html(redovi);
+                        }
+                    }
+                }
+            )
+        }
+
+        if (e.keyCode === 38) {
+
+            let poredak = 'rastuce';
+
+            $.ajax(
+                {
+                    url: 'sort.php',
+                    method: 'post',
+                    data: { Poredak: poredak },
+
+                    success: function (redovi) {
+                        {
+                            $('tbody').html(redovi);
+                        }
+                    }
+                }
+            )
+        }
+
+
     });
 }

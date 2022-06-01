@@ -2,6 +2,7 @@ $(function () {
     add();
     get();
     update();
+    obrisi();
 });
 
 
@@ -82,6 +83,27 @@ function update() {
 
             success: function () {
                 alert('Ispit uspešno izmenjen u bazi podataka!')
+            }
+        })
+    });
+}
+
+
+function obrisi() {
+
+    $(document).on('click', '#brisanje-btn', function () {
+
+        let id = $(this).attr('value');
+
+        $.ajax({
+            url: 'delete.php',
+            method: 'post',
+            data: {
+                Id: id,
+            },
+
+            success: function () {
+                alert('Ispit uspešno obrisan iz baze podataka!')
             }
         })
     });

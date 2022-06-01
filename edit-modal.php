@@ -37,9 +37,10 @@
                         ?>
                     </select>
                 </div>
+                <label value="" id="id_label"></label>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary" id="e_dodaj-btn">Izmeni</button>
+                <button type="button" class="btn btn-primary" id="e_izmeni-btn">Izmeni</button>
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zatvori</button>
             </div>
         </div>

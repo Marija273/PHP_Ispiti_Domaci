@@ -1,5 +1,6 @@
 $(function () {
     add();
+    get();
 });
 
 
@@ -27,4 +28,29 @@ function add() {
             });
     })
 
+}
+
+
+function get() {
+
+    $(document).on('click', '#izmena-btn', function () {
+
+        let id = $(this).attr('value');
+
+        $.ajax({
+            url: 'get.php',
+            method: 'post',
+            data: { Id: id },
+            dataType: 'JSON',
+
+            success: function (data) {
+                $('#modal-izmeni-ispit').modal('show');
+                $('#e_naziv').val(data.naziv);
+                $('#e_espb').val(data.espb);
+                $('#e_ocena').val(data.ocena);
+                $('#e_semestar').val(data.semestar);
+                $('#e_katedra').val(data.katedra_id);
+            }
+        });
+    })
 }

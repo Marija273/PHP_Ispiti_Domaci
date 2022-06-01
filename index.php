@@ -17,6 +17,7 @@
 
     <?php
     require 'add-modal.php';
+    require 'edit-modal.php';
     require 'tabelaIspiti.php';
     ?>
 

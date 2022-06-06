@@ -4,6 +4,7 @@ $(function () {
     update();
     obrisi();
     sortiranje();
+    search();
 });
 
 
@@ -156,4 +157,27 @@ function sortiranje() {
 
 
     });
+}
+
+
+function search() {
+
+    $(document).on('keyup', '#input-src', function () {
+
+        let input = $('#input-src').val();
+
+        $.ajax(
+            {
+                url: 'pretraga.php',
+                method: 'post',
+                data: { Input: input },
+
+                success: function (redovi) {
+                    {
+                        $('tbody').html(redovi);
+                    }
+                }
+            }
+        )
+    })
 }
